@@ -1,0 +1,363 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════
+   MAISON — Premium Fashion Design System
+   ═══════════════════════════════════════════════════ */
+
+@layer base {
+  :root {
+    /* ── Color Palette ── */
+    --color-ivory: #FFFFF0;
+    --color-cream: #FAF7F2;
+    --color-champagne: #C9A96E;
+    --color-gold-light: #D4B87A;
+    --color-gold-dark: #A88B4A;
+    --color-charcoal: #1A1A1A;
+    --color-graphite: #2D2D2D;
+    --color-taupe: #8B7D6B;
+    --color-taupe-light: #B8ADA0;
+    --color-rose: #C4A882;
+    --color-sage: #A8B5A0;
+    --color-error: #C44B4B;
+    --color-success: #5A8A5E;
+
+    /* ── Typography ── */
+    --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+
+    /* ── Spacing Scale ── */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+
+    /* ── Glassmorphism ── */
+    --glass-bg: rgba(255, 255, 240, 0.75);
+    --glass-bg-dark: rgba(26, 26, 26, 0.80);
+    --glass-blur: 20px;
+    --glass-border: rgba(201, 169, 110, 0.2);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+
+    /* ── Transitions ── */
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast: 200ms;
+    --duration-normal: 400ms;
+    --duration-slow: 600ms;
+  }
+
+  /* ── Base Resets ── */
+  html {
+    font-family: var(--font-body);
+    color: var(--color-charcoal);
+    background-color: var(--color-cream);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    overscroll-behavior-y: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Selection ── */
+  ::selection {
+    background-color: var(--color-champagne);
+    color: white;
+  }
+}
+
+@layer components {
+
+  /* ── Glassmorphism Card ── */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-dark {
+    background: var(--glass-bg-dark);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ── Premium Button ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-ivory);
+    background: var(--color-charcoal);
+    border: none;
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-luxury);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-champagne), var(--color-gold-dark));
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-luxury);
+  }
+
+  .btn-primary:hover::after {
+    opacity: 1;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(201, 169, 110, 0.3);
+  }
+
+  .btn-primary span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+    background: transparent;
+    border: 1px solid var(--color-charcoal);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-luxury);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-charcoal);
+    color: var(--color-ivory);
+  }
+
+  /* ── Product Card ── */
+  .product-card {
+    @apply group cursor-pointer;
+    transition: transform var(--duration-normal) var(--ease-luxury);
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .product-card .product-image {
+    @apply relative overflow-hidden;
+    aspect-ratio: 3 / 4;
+  }
+
+  .product-card .product-image img {
+    @apply w-full h-full object-cover;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-luxury),
+      transform var(--duration-slow) var(--ease-luxury);
+  }
+
+  .product-card .product-image img.loaded {
+    opacity: 1;
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+
+  /* ── Section Title ── */
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+  }
+
+  .section-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-taupe);
+  }
+
+  /* ── Divider ── */
+  .divider {
+    @apply w-16 mx-auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-champagne), transparent);
+  }
+}
+
+/* ── Container (outside @layer for specificity) ── */
+.container-luxury {
+  width: 100%;
+  max-width: 80rem;
+  /* 1280px — consistent alignment rail */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-luxury {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@layer utilities {
+
+  /* ── Scroll-triggered reveal ── */
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+    transition: opacity 0.7s var(--ease-luxury),
+      transform 0.7s var(--ease-luxury);
+    will-change: opacity, transform;
+  }
+
+  .reveal-hidden.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* ── Legacy fade-in on scroll (kept for compatibility) ── */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--duration-slow) var(--ease-luxury),
+      transform var(--duration-slow) var(--ease-luxury);
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Image shimmer placeholder ── */
+  .shimmer {
+    background: linear-gradient(90deg,
+        var(--color-cream) 25%,
+        rgba(201, 169, 110, 0.08) 50%,
+        var(--color-cream) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* ── Stagger animation ── */
+  .stagger-1 {
+    transition-delay: 100ms;
+  }
+
+  .stagger-2 {
+    transition-delay: 200ms;
+  }
+
+  .stagger-3 {
+    transition-delay: 300ms;
+  }
+
+  .stagger-4 {
+    transition-delay: 400ms;
+  }
+
+  .stagger-5 {
+    transition-delay: 500ms;
+  }
+
+  .stagger-6 {
+    transition-delay: 600ms;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   PAGE TRANSITIONS
+   ═══════════════════════════════════════════════════ */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity var(--duration-normal) var(--ease-luxury),
+    transform var(--duration-normal) var(--ease-luxury);
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity var(--duration-slow) var(--ease-luxury);
+}
+
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-taupe-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-taupe);
+}
