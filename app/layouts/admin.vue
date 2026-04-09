@@ -22,7 +22,7 @@
           <div class="w-8 h-8 rounded-lg bg-charcoal flex items-center justify-center">
             <span class="text-white text-sm font-bold">M</span>
           </div>
-          <span class="font-heading text-xl tracking-wider text-charcoal">MAISON</span>
+          <span class="font-heading text-xl tracking-wider text-charcoal">MANJASHAN</span>
         </NuxtLink>
         <span class="ml-auto px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase bg-champagne/15 text-champagne rounded-full">Admin</span>
       </div>

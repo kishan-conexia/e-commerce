@@ -14,24 +14,30 @@
         <!-- Image Gallery -->
         <div class="space-y-4">
           <!-- Main Image -->
-          <div class="aspect-[3/4] rounded-lg overflow-hidden bg-gradient-to-br from-taupe-light/10 to-champagne/5">
-            <div class="w-full h-full flex items-center justify-center">
-              <div class="text-center">
-                <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-champagne/10 flex items-center justify-center">
-                  <span class="text-champagne text-3xl">✦</span>
-                </div>
-                <p class="font-heading text-lg text-charcoal/40">Product Image</p>
-                <p class="text-xs text-taupe mt-1">{{ product.name }}</p>
-              </div>
-            </div>
+          <div class="aspect-[3/4] rounded-lg overflow-hidden bg-ivory">
+            <img
+              :src="activeImage"
+              :alt="product.name"
+              class="w-full h-full object-cover transition-opacity duration-300"
+            />
           </div>
           <!-- Thumbnails -->
-          <div class="grid grid-cols-4 gap-2">
-            <div
-              v-for="i in 4"
+          <div class="grid grid-cols-6 gap-2">
+            <button
+              v-for="(img, i) in product.images"
               :key="i"
-              class="aspect-square rounded bg-taupe-light/10 cursor-pointer hover:ring-1 hover:ring-champagne/50 transition-all"
-            />
+              class="aspect-square rounded overflow-hidden border-2 transition-all duration-200"
+              :class="activeImageIndex === i
+                ? 'border-champagne ring-1 ring-champagne/30'
+                : 'border-transparent hover:border-charcoal/20'"
+              @click="activeImageIndex = i"
+            >
+              <img
+                :src="img"
+                :alt="`${product.name} view ${i + 1}`"
+                class="w-full h-full object-cover"
+              />
+            </button>
           </div>
         </div>
 
@@ -56,46 +62,22 @@
 
           <div class="divider !mx-0 !w-full" />
 
-          <!-- Color Selection -->
-          <div v-if="product.colors?.length">
-            <h3 class="text-xs font-semibold tracking-[0.15em] uppercase text-charcoal mb-3">
-              Color: <span class="font-normal text-taupe">{{ selectedColor || 'Select' }}</span>
-            </h3>
-            <div class="flex gap-2">
-              <button
-                v-for="(color, i) in product.colors"
-                :key="color"
-                class="w-9 h-9 rounded-full border-2 transition-all duration-200"
-                :class="selectedColorIndex === i ? 'border-charcoal scale-110' : 'border-charcoal/10 hover:border-charcoal/30'"
-                :style="{ backgroundColor: color }"
-                @click="selectedColorIndex = i"
-              />
-            </div>
+          <!-- Description -->
+          <div v-if="product.description">
+            <p class="text-sm text-taupe leading-relaxed">{{ product.description }}</p>
           </div>
 
-          <!-- Size Selection -->
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <h3 class="text-xs font-semibold tracking-[0.15em] uppercase text-charcoal">
-                Size: <span class="font-normal text-taupe">{{ selectedSize || 'Select' }}</span>
-              </h3>
-              <button class="text-xs text-taupe underline underline-offset-4 hover:text-champagne transition-colors">
-                Size Guide
-              </button>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <button
-                v-for="size in availableSizes"
-                :key="size"
-                class="min-w-[3rem] h-11 px-3 flex items-center justify-center text-sm border transition-all duration-200"
-                :class="selectedSize === size
-                  ? 'border-charcoal bg-charcoal text-ivory'
-                  : 'border-charcoal/15 text-charcoal hover:border-charcoal/40'"
-                @click="selectedSize = size"
-              >
-                {{ size }}
-              </button>
-            </div>
+          <!-- Material Info Badge -->
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-champagne/10 text-xs font-medium text-charcoal">
+              <svg class="w-3.5 h-3.5 text-champagne" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+              Unstitched Material
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sage/10 text-xs font-medium text-charcoal">
+              3-Piece Set
+            </span>
           </div>
 
           <!-- Add to Cart -->
@@ -149,21 +131,19 @@ const { addItem } = useCart()
 const slug = computed(() => route.params.slug as string)
 const product = computed(() => getProductBySlug(slug.value))
 
-const selectedSize = ref<string>('')
-const selectedColorIndex = ref(0)
+const activeImageIndex = ref(0)
 const isWishlisted = ref(false)
 
-const availableSizes = ['XS', 'S', 'M', 'L', 'XL']
-const selectedColor = computed(() => product.value?.colors?.[selectedColorIndex.value] ? `Color ${selectedColorIndex.value + 1}` : '')
+const activeImage = computed(() => product.value?.images?.[activeImageIndex.value] || product.value?.image || '')
 
 const productDetails = computed(() => [
   {
-    title: 'Description',
-    content: product.value?.shortDescription || 'A meticulously crafted piece from the MAISON atelier, combining heritage techniques with contemporary design language.',
+    title: 'Fabric & Care',
+    content: product.value?.careInstructions || 'Premium fabric. Dry clean recommended. Iron on low heat with a pressing cloth.',
   },
   {
-    title: 'Fabric & Care',
-    content: product.value?.careInstructions || 'Premium natural fabric. Dry clean only. Store in a cool, dry place away from direct sunlight. Iron on low heat.',
+    title: 'What\'s Included',
+    content: 'This set includes unstitched kurta fabric, bottom/trouser fabric, and dupatta. Ready for custom tailoring to your measurements.',
   },
   {
     title: 'Shipping',
@@ -174,16 +154,16 @@ const productDetails = computed(() => [
 function handleAddToCart() {
   if (!product.value) return
   addItem({
-    id: `${product.value.id}-${selectedSize.value}`,
-    variantId: `${product.value.id}-${selectedSize.value}`,
+    id: product.value.id,
+    variantId: product.value.id,
     name: product.value.name,
-    variant: `${selectedColor.value} / ${selectedSize.value || 'One Size'}`,
+    variant: 'Unstitched Material',
     price: product.value.basePrice,
     image: product.value.image,
   })
 }
 
 useHead({
-  title: product.value ? `${product.value.name} — MAISON` : 'Product Not Found — MAISON',
+  title: product.value ? `${product.value.name} — MANJASHAN` : 'Product Not Found — MANJASHAN',
 })
 </script>

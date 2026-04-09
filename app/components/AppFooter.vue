@@ -4,7 +4,7 @@
     <div class="border-b border-white/5">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 text-center">
         <h3 class="font-heading text-2xl lg:text-3xl tracking-[0.1em] uppercase text-ivory mb-3">
-          Join the Maison
+          Join the MANJASHAN
         </h3>
         <p class="text-sm text-ivory/50 mb-8 max-w-md mx-auto">
           Be the first to discover new collections, exclusive offers, and curated style inspiration.
@@ -31,7 +31,7 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
         <!-- Brand -->
         <div class="col-span-2 md:col-span-1">
-          <h4 class="font-heading text-xl tracking-[0.12em] uppercase text-ivory mb-4">MAISON</h4>
+          <h4 class="font-heading text-xl tracking-[0.12em] uppercase text-ivory mb-4">MANJASHAN</h4>
           <p class="text-xs leading-relaxed text-ivory/40 mb-6">
             Where heritage craftsmanship meets contemporary elegance.
             Each piece tells a story of artistry and timeless design.
@@ -88,7 +88,7 @@
     <div class="border-t border-white/5">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-xs text-ivory/30">
-          © {{ new Date().getFullYear() }} MAISON. All rights reserved.
+          © {{ new Date().getFullYear() }} MANJASHAN. All rights reserved.
         </p>
         <div class="flex gap-6">
           <NuxtLink to="/privacy" class="text-xs text-ivory/30 hover:text-ivory/60 transition-colors">Privacy Policy</NuxtLink>
@@ -109,17 +109,13 @@ const socials = [
 ]
 
 const shopLinks = [
-  { label: 'New Arrivals', path: '/shop/new-arrivals' },
-  { label: 'Women', path: '/shop/women' },
-  { label: 'Men', path: '/shop/men' },
-  { label: 'Collections', path: '/collections' },
-  { label: 'Sale', path: '/shop/sale' },
+  { label: 'Shop All', path: '/shop/all' },
+  { label: 'New Arrivals', path: '/shop/all' },
 ]
 
 const careLinks = [
   { label: 'Contact Us', path: '/contact' },
   { label: 'Shipping & Returns', path: '/shipping' },
-  { label: 'Size Guide', path: '/size-guide' },
   { label: 'FAQs', path: '/faq' },
   { label: 'Track Order', path: '/account/orders' },
 ]

@@ -110,5 +110,5 @@ const { items, cartTotal, updateQuantity, removeItem } = useCart()
 
 const couponCode = ref('')
 
-useHead({ title: 'Shopping Bag — MAISON' })
+useHead({ title: 'Shopping Bag — MANJASHAN' })
 </script>

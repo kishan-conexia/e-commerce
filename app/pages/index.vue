@@ -4,7 +4,7 @@
     <section
       class="relative h-[85vh] min-h-[600px] overflow-hidden bg-charcoal"
     >
-      <!-- Background gradient (placeholder for hero image) -->
+      <!-- Background gradient -->
       <div
         class="absolute inset-0 bg-gradient-to-br from-charcoal via-graphite to-charcoal"
       >
@@ -34,22 +34,20 @@
           v-reveal="50"
           class="text-champagne/70 text-xs tracking-[0.3em] uppercase mb-4"
         >
-          Spring / Summer 2026
+          Premium Unstitched Collection
         </p>
         <h1 v-reveal="150" class="font-heading text-display text-ivory mb-6">
-          The Art of<br />
-          <span class="text-champagne">Refined Elegance</span>
+          Craft Your Own<br />
+          <span class="text-champagne">Signature Style</span>
         </h1>
         <p v-reveal="250" class="text-ivory/50 text-sm max-w-lg mx-auto mb-10">
-          Where heritage craftsmanship meets contemporary design. Discover our
-          latest collection of handcrafted luxury pieces.
+          Explore our curated collection of premium unstitched suit materials.
+          Handpicked fabrics with exquisite embroidery, designed for your
+          personal tailoring.
         </p>
-        <div
-          v-reveal="350"
-          class="flex flex-col sm:flex-row items-center gap-4 sm:gap-5"
-        >
+        <div v-reveal="350" class="flex items-center gap-5">
           <NuxtLink
-            to="/shop/women"
+            to="/shop/all"
             class="group relative inline-flex items-center justify-center px-10 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase text-white overflow-hidden transition-all duration-500 hover:-translate-y-0.5"
           >
             <span
@@ -61,13 +59,7 @@
             <span
               class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[0_8px_30px_rgba(201,169,110,0.4)]"
             />
-            <span class="relative z-10">Shop Women</span>
-          </NuxtLink>
-          <NuxtLink
-            to="/shop/men"
-            class="inline-flex items-center justify-center px-10 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase text-ivory/80 border border-ivory/25 hover:border-ivory/60 hover:text-ivory hover:bg-ivory/5 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(255,255,240,0.08)]"
-          >
-            Shop Men
+            <span class="relative z-10">Explore Collection</span>
           </NuxtLink>
         </div>
       </div>
@@ -84,57 +76,22 @@
       </div>
     </section>
 
-    <!-- Shop by Category -->
-    <section class="py-20 lg:py-28">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div v-reveal class="text-center mb-14">
-          <p class="section-subtitle mb-3">Explore</p>
-          <h2 class="section-title">Shop by Category</h2>
-          <div class="divider mt-5" />
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
-          <NuxtLink
-            v-for="(cat, i) in categories"
-            :key="cat.slug"
-            :to="`/shop/${cat.slug}`"
-            v-reveal="i * 100"
-            class="group relative aspect-[3/4] overflow-hidden rounded-lg cursor-pointer"
-          >
-            <div class="absolute inset-0" :class="cat.bgClass" />
-
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent pointer-events-none"
-            />
-            <div class="absolute bottom-0 left-0 right-0 p-5">
-              <h3
-                class="font-heading text-lg lg:text-xl text-ivory tracking-wider uppercase"
-              >
-                {{ cat.name }}
-              </h3>
-              <p
-                class="text-ivory/50 text-xs mt-1 group-hover:text-champagne transition-colors"
-              >
-                Shop Now →
-              </p>
-            </div>
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Products -->
+    <!-- Our Collection -->
     <section class="py-16 lg:py-24 bg-ivory/50">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div v-reveal class="text-center mb-14">
           <p class="section-subtitle mb-3">Curated For You</p>
-          <h2 class="section-title">In the Spotlight</h2>
+          <h2 class="section-title">Our Collection</h2>
+          <p class="text-sm text-taupe max-w-lg mx-auto mt-4">
+            Each piece is hand-selected for its exceptional fabric quality,
+            intricate embroidery, and timeless design.
+          </p>
           <div class="divider mt-5" />
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           <div
-            v-for="(product, i) in featuredProducts"
+            v-for="(product, i) in products"
             :key="product.id"
             v-reveal="i * 80"
           >
@@ -148,102 +105,26 @@
                 compareAtPrice: product.compareAtPrice,
                 image: product.image,
                 isNew: product.isNew,
-                colors: product.colors,
               }"
             />
           </div>
         </div>
-
-        <div v-reveal class="text-center mt-12">
-          <NuxtLink to="/shop/new-arrivals" class="btn-outline">
-            View All
-          </NuxtLink>
-        </div>
       </div>
     </section>
 
-    <!-- Collection Banner -->
-    <section class="py-20 lg:py-28">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-          <!-- Left Banner -->
-          <NuxtLink
-            v-reveal
-            to="/collections/summer-2026"
-            class="group relative aspect-[4/5] md:aspect-auto overflow-hidden rounded-lg"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-champagne/20 via-rose/10 to-sage/10"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent"
-            />
-            <div
-              class="absolute inset-0 group-hover:scale-105 transition-transform duration-700 ease-luxury"
-            />
-            <div
-              class="relative h-full min-h-[400px] flex flex-col justify-end p-8 lg:p-12"
-            >
-              <p class="text-ivory/70 text-xs tracking-[0.2em] uppercase mb-2">
-                New Collection
-              </p>
-              <h3 class="font-heading text-3xl lg:text-4xl text-ivory mb-2">
-                Summer<br />Solstice
-              </h3>
-              <p class="text-ivory/60 text-sm mb-6 max-w-xs">
-                Ethereal silhouettes in sun-kissed hues
-              </p>
-              <span
-                class="text-xs tracking-[0.15em] uppercase text-champagne group-hover:translate-x-2 transition-transform duration-300"
-              >
-                Discover →
-              </span>
-            </div>
-          </NuxtLink>
-
-          <!-- Right Banner -->
-          <NuxtLink
-            v-reveal="100"
-            to="/collections/bridal-2026"
-            class="group relative aspect-[4/5] md:aspect-auto overflow-hidden rounded-lg"
-          >
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-charcoal via-graphite to-charcoal"
-            />
-            <div
-              class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(201,169,110,0.15),transparent_70%)]"
-            />
-            <div
-              class="absolute inset-0 group-hover:scale-105 transition-transform duration-700 ease-luxury"
-            />
-            <div
-              class="relative h-full min-h-[400px] flex flex-col justify-end p-8 lg:p-12"
-            >
-              <p
-                class="text-champagne/70 text-xs tracking-[0.2em] uppercase mb-2"
-              >
-                Bridal Edit
-              </p>
-              <h3 class="font-heading text-3xl lg:text-4xl text-ivory mb-2">
-                Eternal<br />Romance
-              </h3>
-              <p class="text-ivory/50 text-sm mb-6 max-w-xs">
-                Heirloom pieces for your most cherished moments
-              </p>
-              <span
-                class="text-xs tracking-[0.15em] uppercase text-champagne group-hover:translate-x-2 transition-transform duration-300"
-              >
-                Explore →
-              </span>
-            </div>
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-
-    <!-- Craftsmanship Section -->
+    <!-- Why Choose Us -->
     <section class="py-20 lg:py-28 bg-charcoal text-ivory">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div v-reveal class="text-center mb-16">
+          <p
+            class="text-champagne/70 text-xs tracking-[0.25em] uppercase mb-3"
+          >
+            The MANJASHAN Promise
+          </p>
+          <h2 class="font-heading text-3xl lg:text-4xl tracking-wide">
+            Why Choose Us
+          </h2>
+        </div>
         <div class="grid md:grid-cols-3 gap-12 lg:gap-16 text-center">
           <div
             v-for="(pillar, i) in pillars"
@@ -267,41 +148,34 @@
       </div>
     </section>
 
-    <!-- New Arrivals -->
-    <section v-if="newArrivals.length" class="py-16 lg:py-24">
+    <!-- How It Works -->
+    <section class="py-20 lg:py-28">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div v-reveal class="flex items-end justify-between mb-10">
-          <div>
-            <p class="section-subtitle mb-2">Just In</p>
-            <h2 class="section-title">New Arrivals</h2>
-          </div>
-          <NuxtLink
-            to="/shop/new-arrivals"
-            class="text-xs tracking-[0.12em] uppercase text-taupe hover:text-champagne transition-colors hidden sm:block"
-          >
-            View All →
-          </NuxtLink>
+        <div v-reveal class="text-center mb-16">
+          <p class="section-subtitle mb-3">Simple Process</p>
+          <h2 class="section-title">How It Works</h2>
+          <div class="divider mt-5" />
         </div>
-
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div class="grid md:grid-cols-3 gap-10 lg:gap-14">
           <div
-            v-for="(product, i) in newArrivals"
-            :key="product.id"
-            v-reveal="i * 80"
+            v-for="(step, i) in steps"
+            :key="step.title"
+            v-reveal="i * 120"
+            class="text-center space-y-4"
           >
-            <ProductCard
-              :product="{
-                id: product.id,
-                slug: product.slug,
-                name: product.name,
-                brand: product.brand,
-                price: product.basePrice,
-                compareAtPrice: product.compareAtPrice,
-                image: product.image,
-                isNew: product.isNew,
-                colors: product.colors,
-              }"
-            />
+            <div
+              class="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-champagne/10 text-champagne font-heading text-xl"
+            >
+              {{ i + 1 }}
+            </div>
+            <h3
+              class="font-heading text-lg tracking-wide uppercase text-charcoal"
+            >
+              {{ step.title }}
+            </h3>
+            <p class="text-sm text-taupe leading-relaxed">
+              {{ step.description }}
+            </p>
           </div>
         </div>
       </div>
@@ -312,59 +186,54 @@
 <script setup lang="ts">
 import { vReveal } from "~/composables/useReveal";
 
-const { featuredProducts, newArrivals } = useProducts();
-
-const categories = [
-  {
-    name: "Sarees",
-    slug: "sarees",
-    bgClass: "bg-gradient-to-br from-champagne/30 to-rose/20",
-  },
-  {
-    name: "Dresses",
-    slug: "dresses",
-    bgClass: "bg-gradient-to-br from-sage/30 to-taupe/20",
-  },
-  {
-    name: "Lehengas",
-    slug: "lehengas",
-    bgClass: "bg-gradient-to-br from-rose/25 to-champagne/15",
-  },
-  {
-    name: "Co-Ords",
-    slug: "co-ords",
-    bgClass: "bg-gradient-to-br from-taupe/30 to-sage/15",
-  },
-];
+const { products } = useProducts();
 
 const pillars = [
   {
-    title: "Heritage Craft",
+    title: "Premium Fabrics",
     icon: "✦",
     description:
-      "Each piece is meticulously handcrafted by master artisans, preserving centuries-old techniques passed down through generations.",
+      "We source the finest organza, chiffon, silk, and georgette from trusted mills, ensuring every yard meets our exacting standards.",
   },
   {
-    title: "Sustainable Luxury",
+    title: "Artisan Embroidery",
     icon: "❋",
     description:
-      "We source the finest natural fabrics and employ eco-conscious processes, ensuring beauty that respects our planet.",
+      "From delicate threadwork to intricate appliqué, each piece is embellished by skilled craftsmen with meticulous attention to detail.",
   },
   {
-    title: "Timeless Design",
+    title: "Custom Tailoring",
     icon: "◆",
     description:
-      "Our designs transcend seasons, blending contemporary silhouettes with traditional motifs for enduring elegance.",
+      "Unstitched materials give you the freedom to create a perfect fit. Design your silhouette, your way.",
+  },
+];
+
+const steps = [
+  {
+    title: "Choose Your Fabric",
+    description:
+      "Browse our curated collection of premium unstitched suit materials. Each set includes kurta, bottom, and dupatta fabric.",
+  },
+  {
+    title: "Place Your Order",
+    description:
+      "Select your favourite piece and order online. We carefully package and ship your materials with complimentary shipping above ₹10,000.",
+  },
+  {
+    title: "Get It Tailored",
+    description:
+      "Take it to your trusted tailor and get it stitched to your exact measurements for a perfect, personalised fit.",
   },
 ];
 
 useHead({
-  title: "MAISON — Premium Fashion | Luxury Clothing & Accessories",
+  title: "MANJASHAN — Premium Unstitched Suit Materials",
   meta: [
     {
       name: "description",
       content:
-        "Discover curated luxury fashion at MAISON. Handcrafted elegance meets modern design in our collections of sarees, dresses, lehengas, and more.",
+        "Discover curated premium unstitched suit materials at MANJASHAN. Handpicked fabrics with exquisite embroidery — organza, chiffon, silk, and more.",
     },
   ],
 });

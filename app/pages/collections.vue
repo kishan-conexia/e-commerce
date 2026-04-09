@@ -49,5 +49,5 @@ const collections = [
   },
 ]
 
-useHead({ title: 'Collections — MAISON' })
+useHead({ title: 'Collections — MANJASHAN' })
 </script>

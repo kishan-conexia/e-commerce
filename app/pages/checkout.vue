@@ -170,5 +170,5 @@ function placeOrder() {
   router.push('/')
 }
 
-useHead({ title: 'Checkout — MAISON' })
+useHead({ title: 'Checkout — MANJASHAN' })
 </script>

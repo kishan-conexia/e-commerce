@@ -78,7 +78,7 @@
             <h1
               class="font-heading text-xl sm:text-2xl lg:text-3xl tracking-[0.15em] uppercase text-charcoal whitespace-nowrap"
             >
-              MAISON
+              MANJASHAN
             </h1>
           </NuxtLink>
         </div>
@@ -209,10 +209,8 @@ const isMobileMenuOpen = ref(false);
 const headerEl = ref<HTMLElement | null>(null);
 
 const leftNav = [
-  { label: "New Arrivals", path: "/shop/new-arrivals" },
-  { label: "Women", path: "/shop/women" },
-  { label: "Men", path: "/shop/men" },
-  { label: "Collections", path: "/collections" },
+  { label: "Shop All", path: "/shop/all" },
+  { label: "About Us", path: "/about" },
 ];
 
 const mobileExtraNav = [
