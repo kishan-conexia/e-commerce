@@ -62,9 +62,12 @@
 
           <div class="divider !mx-0 !w-full" />
 
-          <!-- Description -->
-          <div v-if="product.description">
-            <p class="text-sm text-taupe leading-relaxed">{{ product.description }}</p>
+          <!-- Description and Features -->
+          <div v-if="product.description || (product.features && product.features.length)" class="space-y-4">
+            <p v-if="product.description" class="text-sm text-taupe leading-relaxed">{{ product.description }}</p>
+            <ul v-if="product.features && product.features.length" class="list-disc pl-5 text-sm text-taupe space-y-1.5">
+              <li v-for="feature in product.features" :key="feature">{{ feature }}</li>
+            </ul>
           </div>
 
           <!-- Material Info Badge -->

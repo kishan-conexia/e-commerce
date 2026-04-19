@@ -9,6 +9,7 @@ export interface Product {
   brand?: string;
   image?: string;
   images?: string[];
+  features?: string[];
   isNew?: boolean;
   isFeatured?: boolean;
   colors?: string[];
@@ -31,12 +32,20 @@ export interface ProductVariant {
 const demoProducts: Product[] = [
   {
     id: '1',
-    slug: 'lilac-organza-embroidered-suit',
-    name: 'Lilac Organza Embroidered Suit',
-    description: 'A graceful lilac organza unstitched suit featuring delicate floral embroidery on the neckline and body, complemented by white polka dot accents throughout. The set includes a beautifully embroidered kurta panel, matching bottom fabric, and a sheer organza dupatta with coordinating detailing.',
-    shortDescription: 'Lilac organza suit with floral embroidery & polka dot accents',
-    basePrice: 4500,
-    compareAtPrice: 5800,
+    slug: 'gulnaar-pearl-suit-set-blush',
+    name: 'Gulnaar Pearl Suit Set',
+    description: 'Premium Mal Cotton fabric for a soft, breathable feel. This elegant blush pink suit features all-over pearl booti work on the kurta with heavy fall work on the front panel. The dupatta comes with delicate pea booti detailing, paired with a plain bottom for a balanced, sophisticated look. Perfect for festive wear, day events, and casual elegance.',
+    shortDescription: 'Mal Cotton suit with pearl booti work & heavy fall front panel',
+    features: [
+      'Premium Mal Cotton fabric for a soft, breathable feel',
+      'Elegant blush pink color',
+      'All-over pearl booti work on the kurta',
+      'Heavy fall work on the front panel',
+      'Dupatta with delicate pea booti detailing',
+      'Plain bottom for a balanced, sophisticated look',
+      'Perfect for festive wear, day events, and casual elegance'
+    ],
+    basePrice: 6248,
     brand: 'MANJASHAN',
     image: '/products/1/0A0A0051.JPG',
     images: [
@@ -50,8 +59,8 @@ const demoProducts: Product[] = [
     isNew: true,
     isFeatured: true,
     status: 'active',
-    careInstructions: 'Premium organza fabric. Dry clean recommended. Iron on low heat with a pressing cloth. Store flat to avoid creasing.',
-    tags: ['unstitched', 'organza', 'embroidered', 'suit'],
+    careInstructions: 'Premium Mal Cotton fabric. Dry clean recommended. Iron on low heat with a pressing cloth. Store flat to avoid creasing.',
+    tags: ['unstitched', 'cotton', 'pearl', 'suit'],
   },
   {
     id: '2',
@@ -144,6 +153,37 @@ const demoProducts: Product[] = [
     status: 'active',
     careInstructions: 'Pure silk blend. Dry clean only. Avoid direct sunlight for storage. Iron with pressing cloth on silk setting.',
     tags: ['unstitched', 'silk', 'embroidered', 'suit'],
+  },
+  {
+    id: '6',
+    slug: 'zariya-sky-luxe-set',
+    name: 'Zariya Sky Luxe Set',
+    description: 'This elegant suit set is crafted in fine Chanderi cotton fabric, known for its lightweight texture and subtle sheen. The kurta is beautifully adorned with intricate black and white thread work, creating a striking contrast against the soft base. The design is further enhanced with detailed border work on the dupatta, adding a touch of sophistication and grace. Paired with a complementing bottom featuring subtle thread detailing, this ensemble offers a perfect balance of simplicity and refined craftsmanship.',
+    shortDescription: 'Chanderi cotton suit with black & white thread embroidery, dupatta border work & coordinated bottom',
+    features: [
+      'Premium Chanderi cotton fabric with a soft, airy feel',
+      'Elegant black and white thread embroidery on the kurta',
+      'Intricate detailing for a refined, minimal look',
+      'Dupatta with beautifully crafted lower border work',
+      'Bottom with subtle thread work for a coordinated finish',
+      'Lightweight and perfect for day wear, gatherings, and elegant outings'
+    ],
+    basePrice: 6248,
+    brand: 'MANJASHAN',
+    image: '/products/9/0A0A0189.JPG',
+    images: [
+      '/products/9/0A0A0189.JPG',
+      '/products/9/0A0A0199.JPG',
+      '/products/9/0A0A0218.JPG',
+      '/products/9/0A0A1894.JPG',
+      '/products/9/0A0A1901.JPG',
+      '/products/9/0A0A1906.JPG',
+    ],
+    isNew: true,
+    isFeatured: true,
+    status: 'active',
+    careInstructions: 'Fine Chanderi cotton fabric. Dry clean recommended. Iron on low heat. Store in a cool, dry place.',
+    tags: ['unstitched', 'chanderi', 'cotton', 'suit'],
   },
 ];
 
