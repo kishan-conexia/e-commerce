@@ -65,12 +65,22 @@ const demoProducts: Product[] = [
   },
   {
     id: "2",
-    slug: "olive-floral-print-chiffon-suit",
-    name: "Olive Floral Print Chiffon Suit",
+    slug: "zariya-pearl-garden-suit",
+    name: "Zariya Pearl Garden Suit",
     description:
-      "A stunning olive green unstitched suit with a vibrant floral print featuring pink lotus motifs. The kurta panel is adorned with intricate beadwork on the yoke, paired with a matching chiffon dupatta with delicate lace trim and a solid olive bottom fabric.",
-    shortDescription: "Olive chiffon suit with floral print & beadwork yoke",
-    basePrice: 3800,
+      "This elegant suit set is crafted in fine Chanderi cotton fabric, known for its lightweight texture and subtle sheen. The kurta is beautifully adorned with intricate black and white thread work, creating a striking contrast against the soft base. The design is further enhanced with detailed border work on the dupatta, adding a touch of sophistication and grace. Paired with a complementing bottom featuring subtle thread detailing, this ensemble offers a perfect balance of simplicity and refined craftsmanship.",
+    shortDescription:
+      "Premium crush diamond fabric suit with cutdana embellishments",
+    features: [
+      "Fabric (Kurta & Dupatta): Premium crush diamond fabric with golden shaded finish",
+      "Work: Fine cutdana embellishments for subtle shimmer",
+      "Design: Elegant placement with scattered cutdana booti work",
+      "Dupatta: Lightweight with all-over booti and detailed embroidered border",
+      "Bottom: Plain silk bottom for a rich, polished look",
+      "Color: Soft peach with golden undertones",
+      "Occasion: Ideal for festive wear, day functions & elegant gatherings",
+    ],
+    basePrice: 3239,
     brand: "MANJASHAN",
     image: "/products/2/0A0A0064.JPG",
     images: [
