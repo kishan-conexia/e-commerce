@@ -65,22 +65,21 @@ const demoProducts: Product[] = [
   },
   {
     id: "2",
-    slug: "zariya-pearl-garden-suit",
-    name: "Zariya Pearl Garden Suit",
+    slug: "verdant-lime-green-silk-suit",
+    name: "Verdant Lime Green Silk Suit",
     description:
-      "This elegant suit set is crafted in fine Chanderi cotton fabric, known for its lightweight texture and subtle sheen. The kurta is beautifully adorned with intricate black and white thread work, creating a striking contrast against the soft base. The design is further enhanced with detailed border work on the dupatta, adding a touch of sophistication and grace. Paired with a complementing bottom featuring subtle thread detailing, this ensemble offers a perfect balance of simplicity and refined craftsmanship.",
+      "This ensemble is crafted in premium crape silk, celebrated for its smooth texture, fluid drape, and subtle sheen that enhances the richness of prints. The kurta features a digitally rendered floral composition, brought to life with intricate stone and pearl (purl) embellishments on the neckline, adding a refined shimmer and couture appeal.\n\nThe look is elevated with a sheer organza/chiffon dupatta in a matching verdant hue, delicately finished with fine lace edging that lends softness and graceful movement. The ensemble is completed with a solid crepe silk bottom, offering structure and a polished, luxurious finish.",
     shortDescription:
-      "Premium crush diamond fabric suit with cutdana embellishments",
+      "Premium crape silk suit with stone & pearl embellished neckline and lace dupatta",
     features: [
-      "Fabric (Kurta & Dupatta): Premium crush diamond fabric with golden shaded finish",
-      "Work: Fine cutdana embellishments for subtle shimmer",
-      "Design: Elegant placement with scattered cutdana booti work",
-      "Dupatta: Lightweight with all-over booti and detailed embroidered border",
-      "Bottom: Plain silk bottom for a rich, polished look",
-      "Color: Soft peach with golden undertones",
-      "Occasion: Ideal for festive wear, day functions & elegant gatherings",
+      "Kurta Fabric: Premium crape silk with fluid fall",
+      "Embellishment: Hand-finished stone & pearl (purl) work",
+      "Dupatta: Lightweight sheer organza/chiffon with lace detailing",
+      "Bottom: Solid crepe silk for a sleek silhouette",
+      "Texture Feel: Silky, airy, and elegantly flowy",
+      "Look & Appeal: Fresh, radiant, and effortlessly couture",
     ],
-    basePrice: 3239,
+    basePrice: 3875,
     brand: "MANJASHAN",
     image: "/products/2/0A0A0064.JPG",
     images: [
@@ -152,14 +151,23 @@ const demoProducts: Product[] = [
   },
   {
     id: "5",
-    slug: "teal-embroidered-silk-suit",
-    name: "Teal Embroidered Silk Suit",
+    slug: "petroleum-blue-crush-silk-suit",
+    name: "Petroleum Blue Crush Silk Suit",
     description:
-      "An elegant teal unstitched suit featuring intricate silver and gold threadwork embroidery in a classic paisley pattern on the kurta panel. Complemented by a matching chiffon dupatta with delicate sequin scatter and embroidered border, along with a solid teal bottom fabric.",
+      "Crafted in opulent crush silk, this elegant ensemble is presented in a rich petroleum blue hue, exuding depth and modern sophistication. The kurta is beautifully adorned with intricate kat dana work, adding a delicate shimmer and fine handcrafted detailing that enhances its regal appeal.\n\nThe look is complemented with a soft, sheer dupatta that drapes effortlessly, lending fluidity and grace to the silhouette. Paired with a plain solid bottom, the ensemble maintains a perfect balance between statement detailing and understated elegance—ideal for evening occasions and refined celebrations.",
     shortDescription:
-      "Teal silk suit with silver-gold threadwork & sequin dupatta",
-    basePrice: 5800,
-    compareAtPrice: 7500,
+      "Petroleum blue crush silk suit with intricate kat dana embellishments",
+    features: [
+      "Fabric (Kurta): Premium crush silk with soft textured finish",
+      "Work: Intricate kat dana embellishment for subtle sparkle",
+      "Color: Deep petroleum blue (rich, jewel-toned elegance)",
+      "Dupatta: Lightweight, sheer dupatta with graceful fall",
+      "Bottom: Plain solid bottom for a clean, polished look",
+      "Texture Feel: Soft, slightly crinkled, and fluid",
+      "Occasion: Perfect for evening wear, festive events & small functions",
+      "Look & Feel: Regal, modern, and effortlessly sophisticated",
+    ],
+    basePrice: 3376,
     brand: "MANJASHAN",
     image: "/products/5/0A0A0131.JPG",
     images: [
@@ -343,8 +351,68 @@ const demoProducts: Product[] = [
     status: "active",
     tags: ["unstitched", "cotton", "mull-cotton", "suit"],
   },
+  {
+    id: "11",
+    slug: "ivory-gazri-pink-silk-suit",
+    name: "Ivory & Gazri Pink Silk Suit",
+    description: "An embodiment of timeless elegance, this exquisite ensemble is crafted in premium Chanderi silk, celebrated for its sheer texture and regal sheen. The kurta is delicately adorned with fine sequins and zari work, creating a soft, luminous shimmer that reflects refined craftsmanship. It is paired with a rich pure silk bottom, adding depth and a smooth, polished finish.\n\nThe highlight of the ensemble is the stunning Gazri pink dupatta, beautifully enhanced with intricate sequins booti work scattered gracefully all over and finished with an opulent sequins zari border. The blend of soft ivory and warm gazri pink tones creates a look that is both graceful and striking—perfect for elevated festive and celebratory occasions.",
+    shortDescription: "Premium Chanderi silk suit with gazri pink dupatta and sequins zari work",
+    features: [
+      "Fabric (Kurta): Premium Chanderi silk",
+      "Work: Fine sequins & zari embroidery",
+      "Design: Elegant detailing with subtle texture and floral accents",
+      "Dupatta: Gazri pink dupatta with sequins booti & zari border",
+      "Bottom: Pure silk bottom",
+      "Color Palette: Ivory base with gazri pink highlights",
+      "Occasion: Festive wear, wedding functions & special occasions",
+      "Look & Feel: Regal, soft, and luxuriously refined"
+    ],
+    basePrice: 5148,
+    brand: "MANJASHAN",
+    image: "/products/14/0A0A1871.JPG",
+    images: [
+      "/products/14/0A0A1871.JPG",
+      "/products/14/0A0A1878.JPG",
+      "/products/14/0A0A1879.JPG",
+      "/products/14/0A0A2368.JPG",
+      "/products/14/0A0A2374.JPG",
+      "/products/14/0A0A2377.JPG",
+    ],
+    isNew: true,
+    isFeatured: true,
+    status: "active",
+    tags: ["unstitched", "silk", "chanderi", "suit"],
+  },
+  {
+    id: "12",
+    slug: "mint-mirage-luxe-ensemble",
+    name: "Mint Mirage Luxe Ensemble",
+    description: "A soft pastel aqua with fresh, cool undertones, complemented by subtle ivory zig-zag patterns with multicolor floral hints. The fabric is a lightweight, sheer, and flowy Chiffon/Organza blend for the dupatta, paired with a Crepe/Chanderi-style blend for the kurta. It offers a smooth, airy, and breathable feel with a slightly glossy finish that gives a fresh, summery vibe. The digital floral print with geometric border detailing ensures you look effortlessly modern, while remaining comfortable and wrinkle-resistant.",
+    shortDescription: "Soft pastel aqua printed suit with sheer zig-zag dupatta",
+    features: [
+      "Dupatta: Sheer aqua dupatta with zig-zag border print",
+      "Kurta: Floral printed base with soft pastel blending",
+      "Bottom: Plain solid matching bottom",
+      "Occasion: Day wear, brunch, summer festive, casual elegance",
+      "Vibe: Fresh, breezy, and modern luxury"
+    ],
+    basePrice: 3765,
+    brand: "MANJASHAN",
+    image: "/products/18/0A0A2053.JPG",
+    images: [
+      "/products/18/0A0A2053.JPG",
+      "/products/18/0A0A2065.JPG",
+      "/products/18/0A0A2070.JPG",
+      "/products/18/0A0A2693.JPG",
+      "/products/18/0A0A2699.JPG",
+      "/products/18/0A0A2715.JPG",
+    ],
+    isNew: true,
+    isFeatured: true,
+    status: "active",
+    tags: ["unstitched", "chiffon", "crepe", "suit"],
+  }
 ];
-
 export function useProducts() {
   const products = useState<Product[]>("products", () => demoProducts);
 
