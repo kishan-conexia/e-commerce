@@ -52,6 +52,7 @@
             price: product.basePrice,
             compareAtPrice: product.compareAtPrice,
             image: product.image,
+            video: product.video,
             isNew: product.isNew,
           }"
         />

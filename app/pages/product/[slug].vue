@@ -11,32 +11,66 @@
       </nav>
 
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-16">
-        <!-- Image Gallery -->
+        <!-- Image/Video Gallery -->
         <div class="space-y-4">
-          <!-- Main Image -->
+          <!-- Main Display -->
           <div class="aspect-[3/4] rounded-lg overflow-hidden bg-ivory">
+            <!-- Show video when video thumbnail is selected -->
+            <video
+              v-if="isVideoActive && product.video"
+              :src="product.video"
+              class="w-full h-full object-cover"
+              autoplay
+              muted
+              playsinline
+              loop
+              controls
+            />
+            <!-- Show image otherwise -->
             <img
+              v-else
               :src="activeImage"
               :alt="product.name"
               class="w-full h-full object-cover transition-opacity duration-300"
             />
           </div>
           <!-- Thumbnails -->
-          <div class="grid grid-cols-6 gap-2">
+          <div class="grid gap-2" :class="product.video ? 'grid-cols-7' : 'grid-cols-6'">
             <button
               v-for="(img, i) in product.images"
               :key="i"
               class="aspect-square rounded overflow-hidden border-2 transition-all duration-200"
-              :class="activeImageIndex === i
+              :class="activeImageIndex === i && !isVideoActive
                 ? 'border-champagne ring-1 ring-champagne/30'
                 : 'border-transparent hover:border-charcoal/20'"
-              @click="activeImageIndex = i"
+              @click="selectImage(i)"
             >
               <img
                 :src="img"
                 :alt="`${product.name} view ${i + 1}`"
                 class="w-full h-full object-cover"
               />
+            </button>
+            <!-- Video Thumbnail -->
+            <button
+              v-if="product.video"
+              class="aspect-square rounded overflow-hidden border-2 transition-all duration-200 relative"
+              :class="isVideoActive
+                ? 'border-champagne ring-1 ring-champagne/30'
+                : 'border-transparent hover:border-charcoal/20'"
+              @click="selectVideo"
+            >
+              <img
+                :src="product.image"
+                :alt="`${product.name} video`"
+                class="w-full h-full object-cover"
+              />
+              <!-- Play icon overlay -->
+              <div class="absolute inset-0 flex items-center justify-center bg-charcoal/30">
+                <svg class="w-5 h-5 text-ivory" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
             </button>
           </div>
         </div>
@@ -136,8 +170,18 @@ const product = computed(() => getProductBySlug(slug.value))
 
 const activeImageIndex = ref(0)
 const isWishlisted = ref(false)
+const isVideoActive = ref(false)
 
 const activeImage = computed(() => product.value?.images?.[activeImageIndex.value] || product.value?.image || '')
+
+function selectImage(index: number) {
+  activeImageIndex.value = index
+  isVideoActive.value = false
+}
+
+function selectVideo() {
+  isVideoActive.value = true
+}
 
 const productDetails = computed(() => [
   {

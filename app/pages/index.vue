@@ -4,15 +4,16 @@
     <section
       class="relative h-[85vh] min-h-[600px] overflow-hidden bg-charcoal"
     >
-      <!-- Background gradient -->
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-charcoal via-graphite to-charcoal"
-      >
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img
+          src="/Banner/Banner1.JPG"
+          alt="MANJASHAN Premium Unstitched Collection"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-charcoal/60" />
         <div
           class="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(201,169,110,0.15),transparent_70%)]"
-        />
-        <div
-          class="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(168,181,160,0.1),transparent_60%)]"
         />
       </div>
 
@@ -104,11 +105,30 @@
                 price: product.basePrice,
                 compareAtPrice: product.compareAtPrice,
                 image: product.image,
+                // video: product.video,
                 isNew: product.isNew,
               }"
             />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="relative h-[70vh] min-h-[350px] overflow-hidden">
+      <img
+        src="/Banner/Banner2.JPG"
+        alt="MANJASHAN Artisan Craftsmanship"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-charcoal/50" />
+      <div class="absolute inset-0 flex flex-col items-center justify-end text-center px-6 pb-10">
+        <p v-reveal="50" class="text-champagne/70 text-xs tracking-[0.25em] uppercase mb-3">Label Manjashan</p>
+        <h2 v-reveal="150" class="font-heading text-3xl lg:text-5xl text-ivory tracking-wide mb-4">Crafted With <span class="text-champagne">Heritage</span></h2>
+        <p v-reveal="250" class="text-ivory/50 text-sm max-w-md mx-auto mb-8">Where tradition meets contemporary elegance — every thread tells a story of artisan craftsmanship.</p>
+        <NuxtLink v-reveal="350" to="/shop/all" class="px-8 py-3 border border-champagne/40 text-[11px] font-semibold tracking-[0.2em] uppercase text-ivory hover:bg-champagne/10 transition-all duration-300">
+          View All Pieces
+        </NuxtLink>
       </div>
     </section>
 

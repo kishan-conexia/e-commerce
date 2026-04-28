@@ -9,6 +9,7 @@ export interface Product {
   brand?: string;
   image?: string;
   images?: string[];
+  video?: string;
   features?: string[];
   isNew?: boolean;
   isFeatured?: boolean;
@@ -48,6 +49,7 @@ const demoProducts: Product[] = [
     basePrice: 6248,
     brand: "MANJASHAN",
     image: "/products/1/0A0A0051.JPG",
+    video: "/products/1/video.mp4",
     images: [
       "/products/1/0A0A0051.JPG",
       "/products/1/0A0A0056.JPG",
@@ -82,6 +84,7 @@ const demoProducts: Product[] = [
     basePrice: 3875,
     brand: "MANJASHAN",
     image: "/products/2/0A0A0064.JPG",
+    video: "/products/2/video.mp4",
     images: [
       "/products/2/0A0A0064.JPG",
       "/products/2/0A0A0069.JPG",
@@ -108,6 +111,7 @@ const demoProducts: Product[] = [
     compareAtPrice: 6500,
     brand: "MANJASHAN",
     image: "/products/3/0A0A0077.JPG",
+    video: "/products/3/video.mp4",
     images: [
       "/products/3/0A0A0077.JPG",
       "/products/3/0A0A0086.JPG",
@@ -135,6 +139,7 @@ const demoProducts: Product[] = [
     compareAtPrice: 6200,
     brand: "MANJASHAN",
     image: "/products/4/0A0A6215.JPG",
+    video: "/products/4/video.mp4",
     images: [
       "/products/4/0A0A6215.JPG",
       "/products/4/0A0A6227.JPG",
@@ -170,6 +175,7 @@ const demoProducts: Product[] = [
     basePrice: 3376,
     brand: "MANJASHAN",
     image: "/products/5/0A0A0131.JPG",
+    video: "/products/5/video.mp4",
     images: [
       "/products/5/0A0A0131.JPG",
       "/products/5/0A0A0140.JPG",
@@ -203,6 +209,7 @@ const demoProducts: Product[] = [
     basePrice: 5168,
     brand: "MANJASHAN",
     image: "/products/9/0A0A0189.JPG",
+    video: "/products/9/video.mp4",
     images: [
       "/products/9/0A0A0189.JPG",
       "/products/9/0A0A0199.JPG",
@@ -238,6 +245,7 @@ const demoProducts: Product[] = [
     basePrice: 4678,
     brand: "MANJASHAN",
     image: "/products/6/0A0A0153.JPG",
+    video: "/products/6/video.mp4",
     images: [
       "/products/6/0A0A0153.JPG",
       "/products/6/0A0A0160.JPG",
@@ -271,6 +279,7 @@ const demoProducts: Product[] = [
     basePrice: 5435,
     brand: "MANJASHAN",
     image: "/products/15/0A0A1914.JPG",
+    video: "/products/15/video.mp4",
     images: [
       "/products/15/0A0A1914.JPG",
       "/products/15/0A0A1917.JPG",
@@ -305,6 +314,7 @@ const demoProducts: Product[] = [
     basePrice: 5354,
     brand: "MANJASHAN",
     image: "/products/16/0A0A1840.JPG",
+    video: "/products/16/video.mp4",
     images: [
       "/products/16/0A0A1840.JPG",
       "/products/16/0A0A1846.JPG",
@@ -338,6 +348,7 @@ const demoProducts: Product[] = [
     basePrice: 5168,
     brand: "MANJASHAN",
     image: "/products/19/0A0A1751.JPG",
+    video: "/products/19/video.mp4",
     images: [
       "/products/19/0A0A1751.JPG",
       "/products/19/0A0A1760.JPG",
@@ -370,6 +381,7 @@ const demoProducts: Product[] = [
     basePrice: 5148,
     brand: "MANJASHAN",
     image: "/products/14/0A0A1871.JPG",
+    video: "/products/14/video.mp4",
     images: [
       "/products/14/0A0A1871.JPG",
       "/products/14/0A0A1878.JPG",
@@ -399,6 +411,7 @@ const demoProducts: Product[] = [
     basePrice: 3765,
     brand: "MANJASHAN",
     image: "/products/18/0A0A2053.JPG",
+    video: "/products/18/video.mp4",
     images: [
       "/products/18/0A0A2053.JPG",
       "/products/18/0A0A2065.JPG",
